@@ -1,3 +1,5 @@
+"use client"
+
 import { tokenProvider } from "@/actions/stream.actions";
 import Loader from "@/components/Loader";
 import { useUser } from "@clerk/nextjs";
@@ -22,7 +24,7 @@ const StreamVideoProvider = ({ children }: { children: ReactNode }) => {
         image: user?.imageUrl,
       },
 
-      tokenProvider: tokenProvider,
+      tokenProvider,
     });
 
     setVideoClient(client);
